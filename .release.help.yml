@@ -1,5 +1,5 @@
 # .goreleaser.yml
-project_name: dtm
+project_name: app
 builds:
   - id: dtm_amd64
     env: [CGO_ENABLED=0]
