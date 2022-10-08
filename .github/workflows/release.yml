@@ -16,7 +16,7 @@ jobs:
         uses: docker://goreleaser/goreleaser:latest
         with:
          platforms: linux/amd64
-          args: check
+         args: check
 
       - name: Create release on GitHub
         uses: docker://goreleaser/goreleaser:latest
