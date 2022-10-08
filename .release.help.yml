@@ -35,25 +35,9 @@ builds:
       - -s -w -X main.version={{.Version}}
 
 archives:
-  - id: golang-cross
+  - id: my-archive
     builds:
       - default
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format: zip
     wrap_in_directory: true
-    replacements:
-    amd64: 64-bit
-    386: 32-bit
-    darwin: macOS
-    linux: Tux
-
-  #- id: dtm_arm64
-  #  env: [CGO_ENABLED=0]
-  #  goos:
-  #    - darwin
-  #  goarch:
-  #    - arm64
-  #  dir: .
-  #  main: main.go
-  #  ldflags:
-  #    - -s -w -X main.Version=v{{.Version}}
