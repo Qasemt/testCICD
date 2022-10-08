@@ -1,7 +1,7 @@
-# .goreleaser.yml
+# .release.help.yml
 project_name: app
 builds:
-  - id: dtm_amd64
+  - id: app_amd64
     env: [CGO_ENABLED=0]
     goos:
       - linux
