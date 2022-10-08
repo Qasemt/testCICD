@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"runtime/debug"
-	//	_ "github.com/caarlos0/svu"
 )
 
 var version = "dev"
