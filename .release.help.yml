@@ -12,7 +12,7 @@ builds:
     main: main.go
     ldflags:
       - -s -w -X main.Version=v{{.Version}}
-      
+
   - id: linux-armhf-raspberry
     main: main.go
     binary: golang-cross
@@ -33,22 +33,20 @@ builds:
       - -mod=readonly
     ldflags:
       - -s -w -X main.version={{.Version}}
+
 archives:
-  - 
-  id: golang-cross
-  builds:
-  - default
-  name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-  format: zip
-  wrap_in_directory: true
-  replacements:
+  - id: golang-cross
+    builds:
+      - default
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format: zip
+    wrap_in_directory: true
+    replacements:
     amd64: 64-bit
     386: 32-bit
     darwin: macOS
     linux: Tux
-     
-  strip_parent_binary_folder: true
-    
+    strip_parent_binary_folder: true
   #- id: dtm_arm64
   #  env: [CGO_ENABLED=0]
   #  goos:
