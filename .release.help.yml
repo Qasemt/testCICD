@@ -36,8 +36,4 @@ builds:
 
 archives:
   - id: my-archive
-    builds:
-      - default
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format: zip
-    wrap_in_directory: true
