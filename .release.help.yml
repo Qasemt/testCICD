@@ -12,13 +12,13 @@ builds:
     main: main.go
     ldflags:
       - -s -w -X main.Version=v{{.Version}}
-  - id: dtm_arm64
-    env: [CGO_ENABLED=0]
-    goos:
-      - darwin
-    goarch:
-      - arm64
-    dir: .
-    main: main.go
-    ldflags:
-      - -s -w -X main.Version=v{{.Version}}
+  #- id: dtm_arm64
+  #  env: [CGO_ENABLED=0]
+  #  goos:
+  #    - darwin
+  #  goarch:
+  #    - arm64
+  #  dir: .
+  #  main: main.go
+  #  ldflags:
+  #    - -s -w -X main.Version=v{{.Version}}
