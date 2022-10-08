@@ -33,7 +33,7 @@ builds:
       - -mod=readonly
     ldflags:
       - -s -w -X main.version={{.Version}}
- archives:
+archives:
   - id: golang-cross
     builds:
       - windows-amd64
