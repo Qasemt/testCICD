@@ -33,7 +33,16 @@ builds:
       - -mod=readonly
     ldflags:
       - -s -w -X main.version={{.Version}}
-      
+ archives:
+  - id: golang-cross
+    builds:
+      - windows-amd64
+      - linux-amd64
+      - linux-armhf
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format: zip
+    wrap_in_directory: true
+    
   #- id: dtm_arm64
   #  env: [CGO_ENABLED=0]
   #  goos:
