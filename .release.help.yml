@@ -46,7 +46,7 @@ archives:
     386: 32-bit
     darwin: macOS
     linux: Tux
-    strip_parent_binary_folder: true
+
   #- id: dtm_arm64
   #  env: [CGO_ENABLED=0]
   #  goos:
