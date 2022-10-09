@@ -1,3 +1,3 @@
-module gotest
+module gotest1
 
 go 1.18
