@@ -5,23 +5,33 @@ import (
 	"runtime/debug"
 )
 
-var version = "dev"
+var (
+	version = "dev"
+	commit  = ""
+	date    = ""
+	builtBy = ""
+)
 
 func main() {
 
-	fmt.Println("hello world", getVersion())
+	fmt.Println("hello world", buildVersion(version, commit, date, builtBy))
 
 	//fmt.Println("hello world")
 }
-func getVersion() string {
 
-	info, ok := debug.ReadBuildInfo()
-	if !ok {
-		return "unknown version: error reading build info"
+func buildVersion(version, commit, date, builtBy string) string {
+	result := "nfpm version " + version
+	if commit != "" {
+		result = fmt.Sprintf("%s\ncommit: %s", result, commit)
 	}
-	if info.Main.Version != "(devel)" {
-		return info.Main.Version
+	if date != "" {
+		result = fmt.Sprintf("%s\nbuilt at: %s", result, date)
 	}
-
-	return version
+	if builtBy != "" {
+		result = fmt.Sprintf("%s\nbuilt by: %s", result, builtBy)
+	}
+	if info, ok := debug.ReadBuildInfo(); ok && info.Main.Sum != "" {
+		result = fmt.Sprintf("%s\nmodule version: %s, checksum: %s", result, info.Main.Version, info.Main.Sum)
+	}
+	return result
 }
