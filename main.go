@@ -14,13 +14,13 @@ var (
 
 func main() {
 
-	fmt.Println("hello world", buildVersion(version, commit, date, builtBy))
+	fmt.Println("hello world\n", buildVersion(version, commit, date, builtBy))
 
 	//fmt.Println("hello world")
 }
 
 func buildVersion(version, commit, date, builtBy string) string {
-	result := "nfpm version " + version
+	result := "version " + version
 	if commit != "" {
 		result = fmt.Sprintf("%s\ncommit: %s", result, commit)
 	}
