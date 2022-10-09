@@ -18,7 +18,7 @@ builds:
     dir: .
     main: main.go
     ldflags:
-      - -s -w -X main.Version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.builtBy=goreleaser
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.builtBy=goreleaser
 
   - id: linux-armhf-raspberry
     main: main.go
@@ -39,7 +39,7 @@ builds:
     flags:
       - -mod=readonly
     ldflags:
-      - -s -w -X main.version={{.Version}}
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.builtBy=goreleaser
 
 archives:
   - id: my-archive

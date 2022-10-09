@@ -31,7 +31,7 @@ func buildVersion(version, commit, date, builtBy string) string {
 		result = fmt.Sprintf("%s\nbuilt by: %s", result, builtBy)
 	}
 	if info, ok := debug.ReadBuildInfo(); ok && info.Main.Sum != "" {
-		result = fmt.Sprintf("%s\nmodule version: %s, checksum: %s", result, info.Main.Version, info.Main.Sum)
+		result = fmt.Sprintf("%s\nmodule version: %s, checksum: %s", result, version, info.Main.Sum)
 	}
 	return result
 }
