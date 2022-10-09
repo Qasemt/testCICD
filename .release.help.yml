@@ -1,16 +1,11 @@
 # .release.help.yml
+env:
+  - GO111MODULE=on
+
 project_name: app
 
 gomod:
   proxy: true
-  # If proxy is true, use these environment variables when running `go mod`
-  # commands (namely, `go mod tidy`).
-  #
-  # Default: `os.Environ()` merged with what you set the root `env` section.
-  env:
-    - GOPROXY=https://proxy.golang.org,direct
-    - GOSUMDB=sum.golang.org
-    - GOPRIVATE=example.com/blah
 
 builds:
   - id: app_amd64

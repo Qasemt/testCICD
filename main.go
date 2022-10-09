@@ -5,13 +5,12 @@ import (
 	"runtime/debug"
 )
 
-var Version = "dev"
+var version = "dev"
 
 func main() {
 
-	if info, ok := debug.ReadBuildInfo(); ok && info.Main.Sum != "" {
-		fmt.Println(info)
-	}
+	info, _ := debug.ReadBuildInfo()
+	fmt.Println("hello world, gitlab! (", info.Main, ")")
 
-	fmt.Println("hello world")
+	//fmt.Println("hello world")
 }
