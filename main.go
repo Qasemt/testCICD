@@ -5,7 +5,7 @@ import (
 	"runtime/debug"
 )
 
-var version = "dev"
+var Version = "dev"
 
 func main() {
 
