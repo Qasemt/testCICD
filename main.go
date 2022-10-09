@@ -9,8 +9,19 @@ var version = "dev"
 
 func main() {
 
-	info, _ := debug.ReadBuildInfo()
-	fmt.Println("hello world, gitlab! (", info.Main, ")")
+	fmt.Println("hello world", getVersion())
 
 	//fmt.Println("hello world")
+}
+func getVersion() string {
+
+	info, ok := debug.ReadBuildInfo()
+	if !ok {
+		return "unknown version: error reading build info"
+	}
+	if info.Main.Version != "(devel)" {
+		return info.Main.Version
+	}
+
+	return version
 }
